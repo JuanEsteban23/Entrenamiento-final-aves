@@ -5,6 +5,9 @@ from PIL import Image
 import numpy as np
 import os
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Silencia mensajes INFO y WARNING de TensorFlow
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'  # Opcional, desactiva optimizaciones de TensorFlow
+
 # Ruta relativa al archivo del modelo
 model_path = os.path.join(os.path.dirname(__file__), 'models', 'best_model.keras')
 
